@@ -16,6 +16,8 @@ namespace EPUBtoCBZ.Application
             string outputPath = "";
             EPUBtoCBZConverter converter;
 
+            Console.Write($"Converting {Path.GetFileName(filePath)} to CBZ Format...  ");
+
             if (args.Length >= 2)
             {
                 outputPath = args[1];
