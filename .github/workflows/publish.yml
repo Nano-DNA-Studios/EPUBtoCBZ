@@ -60,7 +60,7 @@ jobs:
       - name: Pack for NuGet
         id: pack-nuget
         shell: bash
-        run: dotnet pack -c Release -p:Version=${{ needs.version.outputs.version }} --no-build 
+        run: dotnet pack ${{ github.event.repository.name }}.Library/${{ github.event.repository.name }}.Library.csproj -c Release -p:Version=${{ needs.version.outputs.version }} --no-build 
 
   upload-nuget:
     runs-on: ["self-hosted", "run-${{github.run_id}}"]

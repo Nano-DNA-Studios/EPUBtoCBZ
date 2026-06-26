@@ -42,7 +42,7 @@ jobs:
       - name: Pack for NuGet
         id: pack-nuget
         shell: bash
-        run: dotnet pack -c Release --no-restore --no-build 
+        run: dotnet pack ${{ github.event.repository.name }}.Library/${{ github.event.repository.name }}.Library.csproj -c Release --no-restore --no-build 
 
   build-source:
     needs: setup
